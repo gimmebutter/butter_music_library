@@ -139,6 +139,7 @@
         $.pageless.loading(false);
         // if there is a complete callback we call it
         if ($.pageless.settings.complete) { $.pageless.settings.complete.call(); }
+				// MCM: gotta throw in an update trigger for our purposes, since we're using Tablesorter as well.
 				$("#tracks_container").trigger("update");
       });
     }
