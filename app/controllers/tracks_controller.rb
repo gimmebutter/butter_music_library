@@ -12,7 +12,6 @@ class TracksController < ApplicationController
     end
     
     if request.xhr?
-      sleep(2)
       render :partial => @tracks
     end
   end
