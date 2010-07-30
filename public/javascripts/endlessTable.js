@@ -823,8 +823,8 @@
   
   $.pageless.loaderHtml = function(){
     return $.pageless.settings.loaderHtml || '\
-<div id="pageless-loader" style="display:none;text-align:center;width:100%;">\
-  <div class="msg" style="color:#e9e9e9;font-size:2em"></div>\
+<div id="pageless-loader" style="background: #FFFEEE; border: 3px solid #FFFF99; display:none;text-align:center; width:300px; z-index: 99; padding: 10px; position: fixed; top: 30%; left: 40%">\
+  <div class="msg" style=" color:#000;font-size:2em"></div>\
   <img src="' + $.pageless.settings.loaderImage + '" title="load" alt="loading more results" style="margin: 10px auto" />\
 </div>';
   };
