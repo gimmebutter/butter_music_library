@@ -49,7 +49,7 @@
     params:       {}, // params of the query you can pass auth_token here
     distance:     100, // page distance in px to the end when the ajax function is launch
     loaderImage:  "/images/load.gif",
-    complete: function() { alert("This is a callback")},
+    complete: function() { $("table").trigger("update"); var sorting = [$.tablesorter.defaults.sortStore]; $("table").trigger("sorton",[sorting]);},
 		scrape: function(data) { return data; }  // Don't do anything by default
   };
   
@@ -74,11 +74,13 @@
 				widthFixed: false,
 				cancelSelection: true,
 				sortList: [],
+				sortStore: [],
 				headerList: [],
 				dateFormat: "us",
 				decimal: '.',
-				debug: true
+				debug: false
 			};
+			
 			
 			/* debuging utils */
 			function benchmark(s,d) {
@@ -519,6 +521,8 @@
 								
 								// add column to sort list
 								config.sortList.push([i,this.order]);
+								$.tablesorter.defaults.sortStore = [i,this.order];
+
 							
 							// multi column sorting
 							} else {
