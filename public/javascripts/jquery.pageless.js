@@ -48,6 +48,7 @@
     params:       {}, // params of the query you can pass auth_token here
     distance:     100, // page distance in px to the end when the ajax function is launch
     loaderImage:  "/images/load.gif",
+    complete: function() { alert(sortList)},
 		scrape: function(data) { return data; }  // Don't do anything by default
   };
   
@@ -139,8 +140,6 @@
         $.pageless.loading(false);
         // if there is a complete callback we call it
         if ($.pageless.settings.complete) { $.pageless.settings.complete.call(); }
-				// MCM: gotta throw in an update trigger for our purposes, since we're using Tablesorter as well.
-				$("#tracks_container").trigger("update");
       });
     }
   };
