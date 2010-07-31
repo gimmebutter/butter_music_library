@@ -109,13 +109,13 @@ table {
       border-right: 1px solid #ddd;
      }
 
-table.content thead tr .header {
+table#tracks_container.content.alternating.tablesorter thead th.header {
 	background: url("/images/bg.gif") no-repeat 100% 50%;
 }
 
-table.content thead tr .headerSortUp {
+table#tracks_container.content.alternating.tablesorter thead th.headerSortUp {
 	background: url("/images/asc.gif") no-repeat 100% 50%;
 }
-table.content thead tr .headerSortDown {
+table#tracks_container.content.alternating.tablesorter thead th.headerSortDown {
 	background: url("/images/desc.gif") no-repeat 100% 50%;
 }
