@@ -1,5 +1,24 @@
 <h1>Butter Music Library</h1>
 
+<div id="jquery_jplayer"></div>
+
+<div id="player_container">
+	<ul id="icons" class="ui-widget ui-helper-clearfix">
+		<li id="play" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-play"></span></li>
+		<li id="pause" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-pause"></span></li>
+		<li id="stop" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-stop"></span></li>
+		<li id="volume-min" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-volume-off"></span></li>
+		<li id="volume-max" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-volume-on"></span></li>
+	</ul>
+
+	<!-- Sliders -->
+	<div id="sliderVolume"></div>
+	<div id="bars_holder">
+		<div id="sliderPlayback"></div>
+		<div id="loaderBar"></div>
+	</div>
+</div>
+
 <h3><%= link_to "Upload Tracks", new_track_path %></h3>
 
 <h3><%= link_to "RSS", formatted_tracks_path("rss") %></h3>
@@ -14,7 +33,9 @@
       <th>
         <input type="checkbox" id="all">
       </th>
-      <th class="header">
+      <th>
+      </th>
+      <th>
         Title
       </th>
       <th>
@@ -29,7 +50,7 @@
       <th>
         Genre
       </th>
-      <th>
+      <th> 
       </th>
     </thead>
     <tbody id="results">
