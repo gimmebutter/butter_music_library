@@ -165,3 +165,8 @@ ul#icons #volume-min {
 	height:.2em;
 	border:0;
 }
+
+#player_container {
+  border: none;
+  margin-top: 0;
+}
