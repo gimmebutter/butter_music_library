@@ -10,7 +10,8 @@ $(document).ready(function() {
  			this.element.jPlayer("setFile", "").jPlayer("stop");
 
  		},
- 		customCssIds: true
+    customCssIds: true,
+    swfPath: "http://gimmebutter.com/javascripts"
  	})
  	.jPlayer("onProgressChange", function(lp,ppr,ppa,pt,tt) {
   		var lpInt = parseInt(lp);
