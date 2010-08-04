@@ -170,3 +170,7 @@ ul#icons #volume-min {
   border: none;
   margin-top: 0;
 }
+
+#tracks_container .trackPlayBtn li {
+  cursor: pointer;
+}

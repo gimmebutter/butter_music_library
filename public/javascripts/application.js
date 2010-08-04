@@ -120,14 +120,14 @@ $(document).ready(function() {
   
   //play tracks
   
-  var trackBtn = $("#tracks_container .trackPlayBtn a");
+  var trackBtn = $("#tracks_container .trackPlayBtn li");
   var trackURL = "";
   var trackTitle = "";
   
   trackBtn.click(function() {
     $(this).blur();
     trackURL = $(this).parent().attr("title");
-    trackTitle = $(this).parent().next("trackTitle");
+    trackTitle = $(this).parent().next("trackTitle").text();
     return(playTrack(trackURL, trackTitle));
   });
 	
