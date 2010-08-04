@@ -7,8 +7,8 @@ $(document).ready(function() {
 	 $("#jquery_jplayer").jPlayer({
 		 ready: function ()
  		{
- 			this.element.jPlayer("setFile", "http://www.miaowmusic.com/audio/mp3/Miaow-05-The-separation.mp3").jPlayer("play");
- 			showPauseBtn();
+ 			this.element.jPlayer("setFile", "").jPlayer("stop");
+
  		},
  		customCssIds: true
  	})
