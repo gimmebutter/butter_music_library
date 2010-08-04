@@ -11,7 +11,7 @@ $(document).ready(function() {
 
  		},
     customCssIds: true,
-    swfPath: "http://gimmebutter.com/javascripts"
+    swfPath: "http://gimmebuttertracks.com/javascripts"
  	})
  	.jPlayer("onProgressChange", function(lp,ppr,ppa,pt,tt) {
   		var lpInt = parseInt(lp);
