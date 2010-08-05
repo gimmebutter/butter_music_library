@@ -1,8 +1,8 @@
 $(document).ready(function() {
 	toggleButtons();
 	selectAll();
-	$("table#tracks_container").tablesorter({ headers: { 0: {sorter: false }, 1:{ sorter: false}, 6: { sorter: false } } });
-	
+	$("table#tracks_container").tablesorter({ headers: { 0: {sorter: false }, 1:{ sorter: false}, 7: { sorter: false } } });
+	var jpPlayInfo = $("#play-info");
 	//jplayer
 	 $("#jquery_jplayer").jPlayer({
 		 ready: function ()
@@ -13,6 +13,9 @@ $(document).ready(function() {
     customCssIds: true,
     swfPath: "http://gimmebuttertracks.com/javascripts"
  	})
+ 	.jPlayer("onProgressChange", function(lp,ppr,ppa,pt,tt) {
+ 		jpPlayInfo.text("at " + parseInt(ppa)+"% of " + $.jPlayer.convertTime(tt) + ", which is " + $.jPlayer.convertTime(pt));
+	})
  	.jPlayer("onProgressChange", function(lp,ppr,ppa,pt,tt) {
   		var lpInt = parseInt(lp);
   		var ppaInt = parseInt(ppa);
@@ -127,9 +130,15 @@ $(document).ready(function() {
   trackBtn.click(function() {
     $(this).blur();
     trackURL = $(this).parent().attr("title");
-    trackTitle = $(this).parent().next("trackTitle").text();
+    trackTitle = $(this).parent().next(".trackTitle").text();
+    $("#trackname").text(trackTitle);
     return(playTrack(trackURL, trackTitle));
   });
+  
+  $.jPlayer.timeFormat.padMin = false;
+	$.jPlayer.timeFormat.padSec = false;
+	$.jPlayer.timeFormat.sepMin = "min ";
+	$.jPlayer.timeFormat.sepSec = "sec";
 	
 	/*tracks & buttons
 
