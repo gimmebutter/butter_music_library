@@ -17,12 +17,6 @@ a:hover {
   text-decoration: underline;
 }
 
-.clear {
-  clear: both;
-  height: 0;
-  overflow: hidden;
-}
-
 #container {
   width: 75%;
   min-width: 900px;
@@ -86,9 +80,7 @@ a:hover {
 
 .nav {
   color: #5D5D5D;
-  margin-top: 18px;
-  margin-right: 5px;
-  float: right;
+  margin-left: 5px;
 }
 
 .search {
@@ -137,6 +129,8 @@ table {
   table.content {
     border: none;
     border-left: 1px solid #ddd;
+    height: 500px;
+    overflow-y: scroll;
     width: 100%; }
     table.content th {
       background: #EBEBEB;
@@ -144,6 +138,7 @@ table {
       border-right: 1px solid #ccc;
       border-bottom: 1px solid #999;
       color: #000;
+      height: 20px;
       padding: 2px 6px;
       text-align: left;
 
@@ -151,6 +146,7 @@ table {
     table.content td {
       border: 0;
       border-right: 1px solid #ddd;
+      height: 20px;
      }
      
 table#tracks_container tr#bottom {
@@ -171,10 +167,17 @@ table#tracks_container.content.alternating.tablesorter thead th.headerSortDown {
 #bottom {
   background: url("/images/player-bottom-bg.png");
   border-bottom: 1px solid #666;
-  height: 20px;
+  height: 25px;
+  padding: 5px 5px 5px 10px;
   box-shadow: -2px 0px 2px #111;
   -webkit-box-shadow: -2px 0px 2px #111;
   -moz-box-shadow: -2px 0px 2px #222;
+}
+
+#bottom input {
+  background: url("/images/btn-purple.png");
+  border: 1px solid #777;
+  color: ;
 }
 
 /*jplayer*/

@@ -1,3 +1,4 @@
+<div id="box" style="float: left">
 <% if @delete %>
   <% form_for :track, :url => delete_multiple_tracks_path, :html => { :method => :delete } do |f| %>
     <p>
@@ -62,3 +63,4 @@
     </p>
   <% end %>
 <% end %>
+</div>

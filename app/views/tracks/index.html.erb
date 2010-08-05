@@ -1,5 +1,4 @@
 <p>
-  <%= submit_tag "Group Edit Selected", :id => "group_edit_button" %> <%= submit_tag "Delete Selected", :id => "group_delete_button" %>
 </p>
 <div id="jquery_jplayer"></div>
 
@@ -15,7 +14,7 @@
 	<!-- Sliders -->
 	<div id="bars_holder">
 	  <div id="track-display">
-	    <span id="trackname"> ----</span> <span class="play-info" id="play-info"> </span>
+	    <span id="trackname">----</span> <span class="play-info" id="play-info"> </span>
 	  	<div id="sliderPlayback"></div>
   		<div id="loaderBar"></div>
 	  </div>
@@ -58,6 +57,7 @@
     </tbody>
     </table>
     <div id="bottom">
+        <%= submit_tag "Group Edit Selected", :id => "group_edit_button" %> <%= submit_tag "Delete Selected", :id => "group_delete_button" %>
     </div>
     <p>
       <%= will_paginate @tracks, :params => { :search=> @search } %>
