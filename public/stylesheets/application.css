@@ -107,17 +107,18 @@ a:hover {
 table {
   border-bottom: 1px solid #bbbbbb;
   border-left: 1px solid #bbb;
-  border-collapse: collapse; }
+  border-collapse: collapse;
+  width: 100%;
+}
   table caption {
     margin-bottom: 10px; }
   table th {
-    background: black;
-    color: white;
     cursor: pointer;
     padding: 5px; }
   table td {
     border-top: 1px solid #bbbbbb;
     padding: 5px; }
+    
   table.alternating {
     background: #fff;
     box-shadow: -2px 0px 2px #111;
@@ -126,21 +127,20 @@ table {
   }
   table.alternating tr:nth-child(even) {
     background: #f1f5fa; }
-  table.content {
+  table {
     border: none;
     border-left: 1px solid #ddd;
     width: 100%; }
-    table.content th {
+    table th {
       background: #EBEBEB;
       border-top: 2px solid #999;
       border-right: 1px solid #ccc;
       border-bottom: 1px solid #999;
       color: #000;
-      padding: 2px 6px;
       text-align: left;
 
        }
-    table.content td {
+    table td {
       border: 0;
       border-right: 1px solid #ddd;
      }
@@ -149,16 +149,17 @@ table#tracks_container tr#bottom {
   background: #ff0000;
 }
 
-table#tracks_container.content.alternating.tablesorter thead th.header {
+table#tracks_container.alternating.tablesorter thead th.header {
 	background: url("/images/bg.gif") no-repeat 100% 50% #EBEBEB;
 }
 
-table#tracks_container.content.alternating.tablesorter thead th.headerSortUp {
+table#tracks_container.alternating.tablesorter thead th.headerSortUp {
 	background: url("/images/asc.gif") no-repeat 100% 50% #becadc;
 }
-table#tracks_container.content.alternating.tablesorter thead th.headerSortDown {
+table#tracks_container.alternating.tablesorter thead th.headerSortDown {
 	background: url("/images/desc.gif") no-repeat 100% 50% #becadc;
 }
+
 
 #bottom {
   background: url("/images/player-bottom-bg.png");

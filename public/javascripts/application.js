@@ -2,6 +2,7 @@ $(document).ready(function() {
 	toggleButtons();
 	selectAll();
 	$("table#tracks_container").tablesorter({ headers: { 0: {sorter: false }, 1:{ sorter: false}, 7: { sorter: false } } });
+
 	var jpPlayInfo = $("#play-info");
 	//jplayer
 	 $("#jquery_jplayer").jPlayer({
@@ -139,24 +140,8 @@ $(document).ready(function() {
 	$.jPlayer.timeFormat.padSec = false;
 	$.jPlayer.timeFormat.sepMin = "min ";
 	$.jPlayer.timeFormat.sepSec = "sec";
-	
-	/*tracks & buttons
 
-	$("#theseparation").click(function() {
-		$(this).blur();
- 		return(playTrack("http://www.miaowmusic.com/audio/mp3/Miaow-05-The-separation.mp3",$("#theseparation").text()));
-	});
-
-	$("#lismore").click(function() {
-		$(this).blur();
-		return(playTrack("http://www.miaowmusic.com/audio/mp3/Miaow-04-Lismore.mp3",$("#lismore").text()));
-	});
-
-	$("#thinice").click(function() {
-		$(this).blur();
-		return(playTrack("http://www.miaowmusic.com/audio/mp3/Miaow-10-Thin-ice.mp3",$("#thinice").text()));
-	});
-	*/
+		$("#tracks_container").tableScroll({height:500}); //needs to be called at end
 	
 });
 
