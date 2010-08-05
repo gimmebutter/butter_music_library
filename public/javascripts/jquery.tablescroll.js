@@ -40,7 +40,6 @@ OTHER DEALINGS IN THE SOFTWARE.
 		$('body').append(div); 
 		var w1 = $('div', div).innerWidth(); 
 		div.css('overflow-y', 'auto');
-		div.css('overflow-x', 'hidden'); 
 		var w2 = $('div', div).innerWidth(); 
 		$(div).remove(); 
 		scrollbarWidth = (w1 - w2);
@@ -121,7 +120,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 			{
 				w = $(this).width();
 
-				$('th:eq('+i+'), th:eq('+i+')',thead_tr_first).css('width',w+'px');
+				$('th:eq('+i+'), td:eq('+i+')',thead_tr_first).css('width',w+'px');
 				$('th:eq('+i+'), td:eq('+i+')',tbody_tr_first).css('width',w+'px');
 				if (has_tfoot) $('th:eq('+i+'), td:eq('+i+')',tfoot_tr_first).css('width',w+'px');
 			});

@@ -894,7 +894,7 @@
     }
     
     // distance to end of page
-    var distance = $(document).height()-$(window).scrollTop()-$(window).height();
+    var distance = $("document").height()-$(window).scrollTop()-$(window).height();
     // if slider past our scroll offset, then fire a request for more data
     if(!$.pageless.isLoading && (distance < $.pageless.settings.distance)) {
       $.pageless.loading(true);

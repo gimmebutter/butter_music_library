@@ -141,7 +141,7 @@ $(document).ready(function() {
 	$.jPlayer.timeFormat.sepMin = "min ";
 	$.jPlayer.timeFormat.sepSec = "sec";
 
-		$("#tracks_container").tableScroll({height:500}); //needs to be called at end
+	//$("#tracks_container").tableScroll({height:500}); //needs to be called at end
 	
 });
 
