@@ -129,7 +129,6 @@ table {
   table.content {
     border: none;
     border-left: 1px solid #ddd;
-    height: 500px;
     overflow-y: scroll;
     width: 100%; }
     table.content th {
@@ -141,13 +140,17 @@ table {
       height: 20px;
       padding: 2px 6px;
       text-align: left;
-
-       }
+    }
     table.content td {
       border: 0;
       border-right: 1px solid #ddd;
       height: 20px;
      }
+   tbody#results {
+     height: 500px;
+     overflow-y: scroll;
+     overflow-x: hidden;
+   }
      
 table#tracks_container tr#bottom {
   background: #ff0000;
