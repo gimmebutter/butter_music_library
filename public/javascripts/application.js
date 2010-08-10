@@ -128,7 +128,7 @@ $(document).ready(function() {
   var trackURL = "";
   var trackTitle = "";
   
-  trackBtn.click(function() {
+  trackBtn.live('click', function() {
     $(this).blur();
     trackURL = $(this).parent().attr("title");
     trackTitle = $(this).parent().next(".trackTitle").text();
