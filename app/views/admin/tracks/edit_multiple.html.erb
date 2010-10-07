@@ -1,6 +1,6 @@
 <div id="box" style="float: left">
 <% if @delete %>
-  <% form_for :track, :url => delete_multiple_tracks_path, :html => { :method => :delete } do |f| %>
+  <% form_for :track, :url => delete_multiple_admin_tracks_path, :html => { :method => :delete } do |f| %>
     <p>
       Are you sure you want to DELETE these tracks??
     </p>
@@ -9,7 +9,7 @@
       <% @tracks.each do |track| %>
         <li>
           <%= hidden_field_tag "track_ids[]", track.id %>
-          <%= link_to track.title, track_path(track) %>
+          <%= link_to track.title, admin_track_path(track) %>
         </li>
       <% end %>
     </ul>
@@ -24,12 +24,12 @@
 
   <h1>Edit Multiple Tracks</h1>
 
-  <% form_for :track, :url => update_multiple_tracks_path, :html => { :method => :put } do |f| %>
+  <% form_for :track, :url => update_multiple_admin_tracks_path, :html => { :method => :put } do |f| %>
     <ul>
       <% @tracks.each do |track| %>
         <li>
           <%= hidden_field_tag "track_ids[]", track.id %>
-          <%= link_to track.title, track_path(track) %>
+          <%= link_to track.title, admin_track_path(track) %>
         </li>
       <% end %>
     </ul>

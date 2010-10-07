@@ -1,4 +1,4 @@
-class Admin::UsersController < Clearance::UsersController
+class Admin::UsersController < ApplicationController
   unloadable
   
   before_filter :admin_only
@@ -17,7 +17,7 @@ class Admin::UsersController < Clearance::UsersController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user].reject { |k,v| v.blank? })
-      redirect_to users_path
+      redirect_to admin_users_path
       flash[:notice] = "User info saved."
     else
       render :action => 'edit'
@@ -42,7 +42,7 @@ class Admin::UsersController < Clearance::UsersController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_path
+    redirect_to admin_users_path
     flash[:notice] = "User deleted."
   end
 
@@ -53,6 +53,6 @@ class Admin::UsersController < Clearance::UsersController
   end
 
   def url_after_create
-    users_path
+    admin_users_path
   end
 end
