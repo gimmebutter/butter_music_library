@@ -54,7 +54,7 @@ class SessionsController < Clearance::SessionsController
   end
 
   def url_after_create
-    '/'
+    admin_root_path
   end
 
   def flash_success_after_destroy

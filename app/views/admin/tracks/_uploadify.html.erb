@@ -8,7 +8,7 @@
     });
   	$('#track_mp3').uploadify({
   		'uploader'  		: '/javascripts/uploadify/uploadify.swf',
-  		'script'    		: '/tracks/create',
+  		'script'    		: '/admin/tracks',
   		'multi'      		: true,
   		'cancelImg'			: '/images/cancel.png',
   		onComplete : function(event, queueID, fileObj, response, data) { var dat = eval('(' + response + ')');$.getScript(dat.upload);},

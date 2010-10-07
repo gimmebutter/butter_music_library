@@ -7,7 +7,7 @@
   <%= flash[:notice] %>
 </p>
 
-<% form_for @track, :html => {:multipart => true} do |f| %>
+<% form_for @track, :url => admin_tracks_path, :html => {:multipart => true, :method => :post} do |f| %>
     <p>
     <%= f.file_field :mp3 %>
   </p>
@@ -15,6 +15,6 @@
 <% end %>
 
 <p>
-  <%= link_to "Done", tracks_path %>
+  <%= link_to "Done", admin_tracks_path %>
 </p>
 </div>

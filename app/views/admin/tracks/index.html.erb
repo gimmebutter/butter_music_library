@@ -19,14 +19,14 @@
   		<div id="loaderBar"></div>
 	  </div>
 	</div>
-	<% form_tag tracks_path, :method => 'get' do %>
+	<% form_tag admin_tracks_path, :method => 'get' do %>
       <%= text_field_tag :search, @search, :class=>"search", :value=>"Search", :onfocus=>"if
     (this.value==this.defaultValue) this.value='';" %>
     <% end %>
   <div class="clearfix"></div>
 </div>
 
-<% form_tag edit_multiple_tracks_path do %>
+<% form_tag edit_multiple_admin_tracks_path do %>
   <table id="tracks_container" class="content alternating tablesorter" summary="Butter Feed Track Listing">
     <thead>
       <th>
@@ -61,7 +61,7 @@
     </div>
     <p>
       <%= will_paginate @tracks, :params => { :search=> @search } %>
-      <%= pageless(@tracks.total_pages, tracks_path) %>
+      <%= pageless(@tracks.total_pages, admin_tracks_path) %>
     </p>
   </div>
   

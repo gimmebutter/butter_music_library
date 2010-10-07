@@ -1,5 +1,5 @@
 class Admin::TracksController < ApplicationController
-  before_filter :authenticate, :except => [:create, :index]
+  #before_filter :authenticate, :except => [:create, :index]
   before_filter :only => :index do |c|
     c.send(:authenticate) unless c.request.format.rss?
   end
@@ -26,8 +26,8 @@ class Admin::TracksController < ApplicationController
     if @track.save
       flash[:notice] = "Successfully created upload."
       respond_to do |format|
-        format.html {redirect_to tracks_path}
-        format.json {render :json => { :result => 'success', :track => track_path(@track) } }
+        format.html {redirect_to admin_tracks_path}
+        format.json {render :json => { :result => 'success', :track => admin_track_path(@track) } }
       end
     else
       render :action => 'new'
@@ -55,7 +55,7 @@ class Admin::TracksController < ApplicationController
   def update
     @track = Track.find(params[:id])
     if @track.update_attributes(params[:track])
-      redirect_to tracks_path
+      redirect_to admin_tracks_path
       flash[:notice] = "Track info saved."
     else
       render :action => 'edit'
@@ -68,13 +68,13 @@ class Admin::TracksController < ApplicationController
       track.update_attributes!(params[:track].reject { |k,v| v.blank? })
     end
     flash[:notice] = "Tracks updated."
-    redirect_to tracks_path
+    redirect_to admin_tracks_path
   end
   
   def destroy
     @track = Track.find(params[:id])
     @track.delete
-    redirect_to tracks_path
+    redirect_to admin_tracks_path
     flash[:notice] = "Track deleted."
   end
   
@@ -85,9 +85,9 @@ class Admin::TracksController < ApplicationController
         track.destroy
       end
       flash[:notice] = "Tracks deleted."
-      redirect_to tracks_path
+      redirect_to admin_tracks_path
     else
-      redirect_to tracks_path
+      redirect_to admin_tracks_path
     end
   end
   
