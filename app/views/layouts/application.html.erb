@@ -8,6 +8,7 @@
     <%= yield(:head) %>
   </head>
   <body>
+      <div id="logo"></div>
       <div class="nav">
         <% if signed_in? %>
           Logged in as <%= current_user.email %> 

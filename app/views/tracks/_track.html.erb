@@ -1,8 +1,5 @@
 
 <tr>
-  <td>
-    <%= check_box_tag "track_ids[]", track.id, false, :onchange => "toggleButtons();" %>
-  </td>
   <td class="trackPlayBtn" title="<%= track.mp3.url %>">
     <li style="list-style:none;" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-play"></span></li>
   </td>
@@ -10,17 +7,20 @@
     <%= track.title %>
   </td>
   <td>
+    <%#= track.length %>
+  </td>
+  <td>
     <%= track.artist %>
   </td>
   <td>
-    <%= track.composer %>
-  </td>
-  <td>
-    <%= track.grouping %>
+    <%#= track.mood %>
   </td>
   <td>
     <%= track.genre %>
   </td>
   <td>
+    <%= link_to "Download", track.mp3.url, :title=>"Download track", :class=>"dl" %> 
   </td>
+  <td>
+    <%= link_to "Check availability", "mailto: ian@gimmebutter.com", :class=>"go" %>
 </tr>

@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	toggleButtons();
 	selectAll();
-	$("table#tracks_container").tablesorter({ headers: { 0: {sorter: false }, 1:{ sorter: false}, 7: { sorter: false } } });
+	$("table#tracks_container").tablesorter({ headers: { 0: {sorter: false }, 7: { sorter: false }, 6: { sorter: false } } });
 
 	var jpPlayInfo = $("#play-info");
 	//jplayer
