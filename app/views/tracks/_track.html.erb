@@ -22,5 +22,5 @@
     <%= link_to "Download", track.mp3.url, :title=>"Download track", :class=>"dl" %> 
   </td>
   <td>
-    <%= link_to "Check availability", "mailto: ian@gimmebutter.com", :class=>"go" %>
+    <%= link_to "Check availability", "mailto: ian@gimmebutter.com?Subject=#{track.title}", :class=>"go" %>
 </tr>
