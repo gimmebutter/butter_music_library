@@ -104,6 +104,7 @@ class Track < ActiveRecord::Base
     end
   end
   
+  # Display track info as min:sec
   def formatted_duration
     l = self.duration.to_f
     mins = l.divmod(60)
