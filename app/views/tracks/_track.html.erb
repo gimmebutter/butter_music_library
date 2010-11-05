@@ -2,6 +2,7 @@
 <tr>
   <td class="trackPlayBtn" title="<%= track.mp3.url %>">
     <li style="list-style:none;" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-play"></span></li>
+    <li style="list-style:none;" id="pause" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-pause"></span></li>
   </td>
   <td class="trackTitle">
     <%= track.title %>
@@ -22,5 +23,5 @@
     <%= link_to "Download", track.itunes_filename, :title=>"Download track", :class=>"dl" %> 
   </td>
   <td>
-    <%= link_to "Check availability", "mailto: ian@gimmebutter.com", :class=>"go" %>
+    <%= link_to "Check availability", "mailto: ian@gimmebutter.com?Subject=#{track.title}", :class=>"go" %>
 </tr>
