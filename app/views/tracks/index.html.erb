@@ -57,6 +57,6 @@
     </div>
     <p>
       <%= will_paginate @tracks, :params => { :search=> @search } %>
-      <%= pageless(@tracks.total_pages, admin_tracks_path) %>
+      <%= pageless(@tracks.total_pages, tracks_path) %>
     </p>
   </div>

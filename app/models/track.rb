@@ -1,6 +1,6 @@
 require 'mp3info'
 require 'rss/2.0'
-#require 'rss/itunes'
+require 'rss/itunes'
 require 'mime/types'
 require 'solr_pagination'
 require 'cgi'
@@ -28,6 +28,7 @@ class Track < ActiveRecord::Base
         self.album = song.tag2.TAL
         self.comments = song.tag.comments
         self.artist = song.tag.artist
+        self.duration = song.length
       end
     end
   end
@@ -101,5 +102,16 @@ class Track < ActiveRecord::Base
     else
       "http://s3.amazonaws.com/butter_music_library/#{CGI.escape(self.mp3.path)}"
     end
+  end
+  
+  def formatted_duration
+    l = self.duration.to_f
+    mins = l.divmod(60)
+    if mins[0] == 0
+      ln = ":#{mins[1].round}"
+    else
+      ln = "#{mins[0]}:#{mins[1].round}"
+    end
+    ln
   end
 end

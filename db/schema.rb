@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100719212016) do
+ActiveRecord::Schema.define(:version => 20101105001119) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20100719212016) do
     t.text     "comments"
     t.string   "album"
     t.string   "artist"
+    t.string   "duration"
   end
 
   create_table "users", :force => true do |t|
