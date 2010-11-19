@@ -6,6 +6,7 @@ require 'solr_pagination'
 require 'cgi'
 
 class Track < ActiveRecord::Base
+  acts_as_taggable
   has_attached_file :mp3, :storage => :s3, 
                           :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
                           :path => ':attachment/:id/:basename.:extension'
@@ -16,6 +17,8 @@ class Track < ActiveRecord::Base
   
   # Sticking Solr in after paperclip because the reverse causes problems...
   acts_as_solr
+  
+  
   
   # Grab the metadata and store it in the DB so we can edit it later.
   def get_meta
