@@ -13,7 +13,7 @@ Rails::Initializer.run do |config|
   %w(middleware).each do |dir|
     config.load_paths << "#{RAILS_ROOT}/app/#{dir}" 
   end
-  
+  config.gem "acts-as-taggable-on"
   config.gem 'mime-types', :lib => 'mime/types'
   config.gem 'paperclip'
   config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
