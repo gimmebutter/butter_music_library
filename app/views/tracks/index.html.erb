@@ -1,5 +1,26 @@
 <p>
 </p>
+<div id="advanced-search">
+  <% form_for Search.new, :url => searches_path, :html => { :method => :post } do |f| %>
+    <p>
+      <%= f.label :genre %>
+
+      <%= f.select :genre, Genre.all.collect { |c| [c.name] }, :include_blank => true %>
+    
+      <%= f.label :mood %>
+
+      <%= f.select :mood, Mood.all.collect { |c| [c.name] }, :include_blank => true %>
+    
+      <%= f.label :composer %>
+
+      <%= f.select :composer, Composer.all.collect { |c| [c.name] }, :include_blank => true %>
+    
+      <%= f.submit "Submit" %>
+    </p>
+  <% end %>
+</div>
+      
+    
 <div id="jquery_jplayer"></div>
 
 <div id="player_container">
