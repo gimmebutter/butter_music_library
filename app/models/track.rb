@@ -122,6 +122,12 @@ class Track < ActiveRecord::Base
     else
       ln = "#{mins[0]}:#{mins[1].round}"
     end
-    ln
+    if !self.duration.blank?
+      if self.duration.include?(":")
+        self.duration
+      else 
+        ln
+      end
+    end
   end
 end
