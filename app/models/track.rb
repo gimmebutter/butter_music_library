@@ -12,13 +12,12 @@ class Track < ActiveRecord::Base
                           :path => ':attachment/:id/:basename.:extension'
   
   before_create :get_meta
+  before_save   :update_meta_models
   
   default_scope :order => 'title'
   
   # Sticking Solr in after paperclip because the reverse causes problems...
   acts_as_solr
-  
-  
   
   # Grab the metadata and store it in the DB so we can edit it later.
   def get_meta
@@ -34,6 +33,13 @@ class Track < ActiveRecord::Base
         self.duration = song.length
       end
     end
+  end
+  
+  # Create moods, composer names and genres from the track if they don't already exist.
+  def update_meta_models
+    Genre.create_from_track(self)
+    Mood.create_from_track(self)
+    Composer.create_from_track(self)
   end
   
   # Solr search with pagination.

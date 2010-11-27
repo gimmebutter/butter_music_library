@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  genre: MyString
+  mood: MyString
+  composer: MyString
+
+two:
+  genre: MyString
+  mood: MyString
+  composer: MyString
