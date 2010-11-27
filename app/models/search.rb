@@ -4,6 +4,12 @@ class Search < ActiveRecord::Base
     @tracks ||= find_tracks
   end
   
+  def particulars
+    "#{self.genre} #{self.mood} #{self.composer}"
+  end
+  
+  private
+  
   def find_tracks
     Track.find(:all, :conditions => conditions)
   end
@@ -12,12 +18,12 @@ class Search < ActiveRecord::Base
     ["tracks.genre LIKE ?", "%#{genre}%"] unless genre.blank?
   end
   
-  def composer_conditions
-    ["tracks.composer LIKE ?", "%#{composer}%"] unless composer.blank?
-  end
-  
   def mood_conditions
     ["tracks.album LIKE ?", "%#{mood}%"] unless mood.blank?
+  end
+  
+  def composer_conditions
+    ["tracks.composer LIKE ?", "%#{composer}%"] unless composer.blank?
   end
   
   def conditions
@@ -34,9 +40,5 @@ class Search < ActiveRecord::Base
 
   def conditions_parts
     private_methods(false).grep(/_conditions$/).map { |m| send(m) }.compact
-  end
-  
-  def particulars
-    "#{self.genre} #{self.mood} #{self.composer}"
   end
 end
