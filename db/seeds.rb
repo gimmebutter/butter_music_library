@@ -7,3 +7,4 @@
 #   Major.create(:name => 'Daley', :city => cities.first)
 User.create(:email => 'ian@gimmebutter.com', :password => 'password', :password_confirmation => 'password', :admin => true)
 User.create(:email => 'maloney.mc@gmail.com', :password => 'password', :password_confirmation => 'password', :admin => true)
+User.create(:email => 'robertj.whitney@gmail.com', :password => 'password', :password_confirmation => 'password', :admin => true)
