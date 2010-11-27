@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.root :controller => 'tracks'
     admin.resources :tracks, :collection => { :edit_multiple => :post, :update_multiple => :put, :delete_multiple => :delete }
     admin.resources :users
+    admin.resources :searches
   end
   
   map.resource  :session, :controller => 'sessions', :only => [:new, :create, :destroy]
