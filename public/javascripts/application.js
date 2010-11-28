@@ -134,10 +134,12 @@ $(document).ready(function() {
     if ($(this).is('.current')) {
       if ($(this).is('.playing')) {
         $("#jquery_jplayer").jPlayer("pause");
+        showPlayBtn();
         $(this).children("span").removeClass("ui-icon-pause").addClass("ui-icon-play");
         $(this).removeClass("playing")
       } else {  
         $("#jquery_jplayer").jPlayer("play");
+        showPauseBtn();
         $(this).children("span").removeClass("ui-icon-play").addClass("ui-icon-pause");
         $(this).addClass("playing")
       }
@@ -152,6 +154,7 @@ $(document).ready(function() {
       });
       $(this).addClass('current').addClass('playing');
       $(this).children("span").removeClass("ui-icon-play").addClass("ui-icon-pause");
+      showPauseBtn();
       
       return(playTrack(trackURL, trackTitle));
     }
