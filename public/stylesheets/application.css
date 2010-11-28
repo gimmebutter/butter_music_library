@@ -338,3 +338,7 @@ html[xmlns] .clearfix {
 	height: 1%;
 }
 
+.hidden {
+  display: none;
+}
+

@@ -6,7 +6,8 @@
   <a href="#" id="advanced_search">Advanced Search</a>
 </p>
 
-<div id="advanced-search-form" style="display:none; padding:10px;">
+<div class="hidden">
+<div id="advanced-search-form" style="padding:10px;">
   <% form_for Search.new, :url => searches_path, :html => { :method => :post } do |f| %>
     <p>
       <%= f.label :genre %>
@@ -28,6 +29,7 @@
       <%= f.submit "Submit" %>
     </p>
   <% end %>
+</div>
 </div>
       
     
