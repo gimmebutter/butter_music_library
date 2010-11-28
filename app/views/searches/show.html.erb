@@ -27,32 +27,38 @@
   <div class="clearfix"></div>
 </div>
   <table id="tracks_container" class="content alternating tablesorter" summary="Butter Feed Track Listing">
-    <thead>
-      <th>
-      </th>
-      <th>
-        Title
-      </th>
-      <th>
-        Time
-      </th>
-      <th>
-        Artist
-      </th>
-      <th>
-        Mood
-      </th>
-      <th>
-        Genre
-      </th>
-      <th> 
-      </th>
-      <th>
-      </th>
-    </thead>
-    <tbody id="results">
-      <%= render :partial => "tracks/track", :collection => @tracks %>
-    </tbody>
+    <% if @tracks.blank? %>
+      <p>
+        This search returned no results. Please try again.
+      </p>
+    <% else %>
+      <thead>
+        <th>
+        </th>
+        <th>
+          Title
+        </th>
+        <th>
+          Time
+        </th>
+        <th>
+          Artist
+        </th>
+        <th>
+          Mood
+        </th>
+        <th>
+          Genre
+        </th>
+        <th> 
+        </th>
+        <th>
+        </th>
+      </thead>
+      <tbody id="results">
+        <%= render :partial => "tracks/track", :collection => @tracks %>
+      </tbody>
+    <% end %>
     </table>
     <div id="bottom">
     </div>
