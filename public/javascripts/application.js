@@ -176,6 +176,7 @@ $(document).ready(function() {
     nextTrack.parent("tr").addClass('highlight');
     nextPlaybtn.addClass("current").addClass("playing");
     nextPlaybtn.children("span").removeClass("ui-icon-play").addClass("ui-icon-pause");
+    $("#trackname").text(trackTitle);
     return(playTrack(trackURL, trackTitle));
  	});
   
