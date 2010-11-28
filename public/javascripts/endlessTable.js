@@ -871,11 +871,11 @@
     if(bool === true){
       $.pageless.isLoading = true;
       if($.pageless.loader)
-       // $.pageless.loader.fadeIn('normal');
+        $.pageless.loader.fadeIn('normal');
     } else {
       $.pageless.isLoading = false;
       if($.pageless.loader)
-        //$.pageless.loader.fadeOut('normal');
+        $.pageless.loader.fadeOut('normal');
     }
   };
   
