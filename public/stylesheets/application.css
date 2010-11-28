@@ -199,7 +199,7 @@ table#tracks_container {
 }
 
 tbody#results {
-  height: 500px;
+  height: 450px;
   overflow-y: scroll;
   overflow-x: hidden;
   display: block;
@@ -210,7 +210,7 @@ tbody#results td.trackPlayBtn, th.playBtn {
   width: 20px;
 }
 
-tbody#results td.trackTitle {
+tbody#results td.trackTitle, th.title.admin {
   width: 206px;
 }
 
@@ -226,7 +226,7 @@ th.time {
   width: 50px;
 }
 
-tbody#results td.trackArtist {
+tbody#results td.trackArtist, th.artist.admin {
   width: 200px;
 }
 
@@ -234,7 +234,7 @@ th.artist {
   width: 195px;
 }
 
-tbody#results td.trackAlbum {
+tbody#results td.trackAlbum, th.mood.admin {
   width: 100px;
 }
 
@@ -246,8 +246,16 @@ tbody#results td.trackGenre, th.genre {
   width: 100px;
 }
 
+th.genre.admin {
+  width: 120px;
+}
+
 tbody#results td.trackDl, th.download {
   width: 78px;
+}
+
+th.edit.admin {
+  width: 140px;
 }
 
 tbody#results td.trackAvail, th.avail {
