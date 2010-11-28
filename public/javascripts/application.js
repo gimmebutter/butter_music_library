@@ -170,8 +170,10 @@ $(document).ready(function() {
     
     currentTrack.children("span").removeClass("ui-icon-pause").addClass("ui-icon-play");
     currentTrack.removeClass("playing");
+    currentTrack.parent().parent("tr").removeClass('highlight');
     //playTrack(trackURL);
     currentTrack.removeClass("current");
+    nextTrack.parent("tr").addClass('highlight');
     nextPlaybtn.addClass("current").addClass("playing");
     nextPlaybtn.children("span").removeClass("ui-icon-play").addClass("ui-icon-pause");
     return(playTrack(trackURL, trackTitle));
