@@ -29,6 +29,9 @@
 //  * www.unspace.ca/discover/pageless/
 //  * famspam.com/facebox
 // =======================================================================
+
+
+//!IMORTANT! Lines 883, 887, & 900 have had 'window' replaced with '#results' so that the pagination takes place with the table body.
  
 (function($) {
 
@@ -47,7 +50,7 @@
     pagination:   '.pagination',
     url:          location.href,
     params:       {}, // params of the query you can pass auth_token here
-    distance:     100, // page distance in px to the end when the ajax function is launch
+    distance:     50, // page distance in px to the end when the ajax function is launch
     loaderImage:  "/images/load.gif",
     complete: function() { $("table").trigger("update"); var sorting = [$.tablesorter.defaults.sortStore]; $("table").trigger("sorton",[sorting]);},
 		scrape: function(data) { return data; }  // Don't do anything by default
@@ -877,11 +880,11 @@
   };
   
   $.pageless.stopListener = function() {
-    $(window).unbind('.pageless');
+    $("#results").unbind('.pageless');
   };
   
   $.pageless.startListener = function() {
-    $(window).bind('scroll.pageless', $.pageless.scroll);
+    $("#results").bind('scroll.pageless', $.pageless.scroll);
   };
   
   $.pageless.scroll = function() {
@@ -894,7 +897,7 @@
     }
     
     // distance to end of page
-    var distance = $("document").height()-$(window).scrollTop()-$(window).height();
+    var distance = $("document").height()-$("#results").scrollTop()-$("#results").height();
     // if slider past our scroll offset, then fire a request for more data
     if(!$.pageless.isLoading && (distance < $.pageless.settings.distance)) {
       $.pageless.loading(true);

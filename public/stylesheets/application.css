@@ -130,7 +130,7 @@ table {
   border-bottom: 1px solid #bbbbbb;
   border-left: 1px solid #bbb;
   border-collapse: collapse;
-  width: 100%;
+  width: 960px;
 }
   table caption {
     margin-bottom: 10px; }
@@ -152,7 +152,7 @@ table {
   table {
     border: none;
     border-left: 1px solid #ddd;
-    width: 100%; }
+    width: 960px; }
     table th {
       background: #EBEBEB;
       border-top: 1px solid #999;
@@ -166,6 +166,10 @@ table {
       border: 0;
       border-right: 1px solid #ddd;
      }
+  table thead {
+    background: #EBEBEB;
+    border-top: 1px solid #999;
+  }
      
 table#tracks_container tr#bottom {
   background: #ff0000;
@@ -186,6 +190,70 @@ table#tracks_container tr.highlight {
   background: #CDF1FA;
 }
 
+thead {
+  display: block;
+}
+
+table#tracks_container {
+  overflow-x: hidden;
+}
+
+tbody#results {
+  height: 500px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: block;
+  width: 960px;
+}
+
+tbody#results td.trackPlayBtn, th.playBtn {
+  width: 20px;
+}
+
+tbody#results td.trackTitle {
+  width: 206px;
+}
+
+th.title {
+  width: 199px;
+}
+
+tbody#results td.trackTime {
+  width: 50px;
+}
+
+th.time {
+  width: 50px;
+}
+
+tbody#results td.trackArtist {
+  width: 200px;
+}
+
+th.artist {
+  width: 195px;
+}
+
+tbody#results td.trackAlbum {
+  width: 100px;
+}
+
+th.mood {
+  width: 96px;
+}
+
+tbody#results td.trackGenre, th.genre {
+  width: 100px;
+}
+
+tbody#results td.trackDl, th.download {
+  width: 78px;
+}
+
+tbody#results td.trackAvail, th.avail {
+  width: 120px;
+}
+
 
 #bottom {
   background: url("/images/player-bottom-bg.png");
@@ -195,12 +263,12 @@ table#tracks_container tr.highlight {
   box-shadow: -2px 0px 2px #D3C600;
   -webkit-box-shadow: -2px 0px 2px #D3C600;
   -moz-box-shadow: -2px 0px 2px #D3C600;
+  width: 945px;
 }
 
 #bottom input {
   background: url("/images/btn-purple.png");
   border: 1px solid #777;
-  color: ;
 }
 
 /*jplayer*/
@@ -217,6 +285,7 @@ table#tracks_container tr.highlight {
   box-shadow: -2px -1px 2px #D3C600;
   -webkit-box-shadow: -2px -1px 2px #D3C600;
   -moz-box-shadow: -2px -1px 2px #D3C600;
+  width: 920px;
 }
 
 ul#icons {margin: 0 10px 0 0; padding: 0; float: left; width: 25%; min-width: 220px;}

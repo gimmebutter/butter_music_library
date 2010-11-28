@@ -6,21 +6,21 @@
   <td class="trackTitle">
     <%= track.title %>
   </td>
-  <td>
+  <td class="trackTime">
     <%= track.formatted_duration %>
   </td>
-  <td>
+  <td class="trackArtist">
     <%= track.artist %>
   </td>
-  <td>
+  <td class="trackAlbum">
     <%= track.album %>
   </td>
-  <td>
+  <td class="trackGenre">
     <%= track.genre %>
   </td>
-  <td>
-    <%= link_to "Download", track.itunes_filename, :title=>"Download track", :class=>"dl" %> 
+  <td class="trackDl">
+    <%= link_to "Download", track.mp3.url, :title=>"Download track", :target=>"_blank", :class=>"dl" %> 
   </td>
-  <td>
+  <td class="trackAvail">
     <%= link_to "Check availability", "mailto: ian@gimmebutter.com?Subject=Licensing Inquiry: #{track.title}", :class=>"go" %>
 </tr>
