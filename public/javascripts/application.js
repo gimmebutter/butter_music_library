@@ -20,7 +20,9 @@ $(document).ready(function() {
  	.jPlayer("onProgressChange", function(lp,ppr,ppa,pt,tt) {
   		var lpInt = parseInt(lp);
   		var ppaInt = parseInt(ppa);
+  		var jpPlayInfo = $("#play-info");
   		global_lp = lpInt;
+  		jpPlayInfo.text($.jPlayer.convertTime(pt))
 
  		$('#loaderBar').progressbar('option', 'value', lpInt);
   		$('#sliderPlayback').slider('option', 'value', ppaInt);
@@ -129,17 +131,36 @@ $(document).ready(function() {
   var trackTitle = "";
   
   trackBtn.live('click', function() {
-    $(this).blur();
-    trackURL = $(this).parent().attr("title");
-    trackTitle = $(this).parent().next(".trackTitle").text();
-    $("#trackname").text(trackTitle);
-    return(playTrack(trackURL, trackTitle));
+    if ($(this).is('.current')) {
+      if ($(this).is('.playing')) {
+        $("#jquery_jplayer").jPlayer("pause");
+        $(this).children("span").removeClass("ui-icon-pause").addClass("ui-icon-play");
+        $(this).removeClass("playing")
+      } else {  
+        $("#jquery_jplayer").jPlayer("play");
+        $(this).children("span").removeClass("ui-icon-play").addClass("ui-icon-pause");
+        $(this).addClass("playing")
+      }
+    } else {
+      trackURL = $(this).parent().attr("title");
+      trackTitle = $(this).parent().next(".trackTitle").text();
+      $("#trackname").text(trackTitle);
+      
+      $("#tracks_container .trackPlayBtn li").each(function(){
+        $(this).removeClass('current');
+        $(this).children("span").removeClass("ui-icon-pause").addClass("ui-icon-play");
+      });
+      $(this).addClass('current').addClass('playing');
+      $(this).children("span").removeClass("ui-icon-play").addClass("ui-icon-pause");
+      
+      return(playTrack(trackURL, trackTitle));
+    }
   });
   
   $.jPlayer.timeFormat.padMin = false;
-	$.jPlayer.timeFormat.padSec = false;
-	$.jPlayer.timeFormat.sepMin = "min ";
-	$.jPlayer.timeFormat.sepSec = "sec";
+	$.jPlayer.timeFormat.padSec = true;
+	$.jPlayer.timeFormat.sepMin = ":";
+	//$.jPlayer.timeFormat.sepSec = "sec";
 
 	//$("#tracks_container").tableScroll({height:500}); //needs to be called at end
 	
