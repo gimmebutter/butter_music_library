@@ -27,9 +27,9 @@ $(document).ready(function() {
  		$('#loaderBar').progressbar('option', 'value', lpInt);
   		$('#sliderPlayback').slider('option', 'value', ppaInt);
  	})
- 	.jPlayer("onSoundComplete", function() {
+ 	/*.jPlayer("onSoundComplete", function() {
  		this.element.jPlayer("play");
- 	});
+ 	});*/
 
  	$("#pause").hide();
 
@@ -159,6 +159,22 @@ $(document).ready(function() {
       return(playTrack(trackURL, trackTitle));
     }
   });
+  
+  $("#jquery_jplayer").jPlayer("onSoundComplete", function() {
+    currentTrack = $(".current")
+    var nextTrack = currentTrack.parent().parent().next().children(".trackPlayBtn");
+    trackURL = nextTrack.attr("title");
+    trackTitle = nextTrack.next(".trackTitle").text();
+    nextPlaybtn = nextTrack.children("li")
+    
+    currentTrack.children("span").removeClass("ui-icon-pause").addClass("ui-icon-play");
+    currentTrack.removeClass("playing");
+    //playTrack(trackURL);
+    currentTrack.removeClass("current");
+    nextPlaybtn.addClass("current").addClass("playing");
+    nextPlaybtn.children("span").removeClass("ui-icon-play").addClass("ui-icon-pause");
+    return(playTrack(trackURL, trackTitle));
+ 	});
   
   $.jPlayer.timeFormat.padMin = false;
 	$.jPlayer.timeFormat.padSec = true;
