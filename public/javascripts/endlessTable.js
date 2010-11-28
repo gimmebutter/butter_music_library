@@ -825,7 +825,9 @@
 	});
   
   $.pageless.loaderHtml = function(){
-    return $.pageless.settings.loaderHtml || '';
+    return $.pageless.settings.loaderHtml || '\
+<div id="pageless-loader>\
+</div>';
   };
  
   // settings params: totalPages
