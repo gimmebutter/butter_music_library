@@ -151,11 +151,12 @@ $(document).ready(function() {
       $("#tracks_container .trackPlayBtn li").each(function(){
         $(this).removeClass('current');
         $(this).children("span").removeClass("ui-icon-pause").addClass("ui-icon-play");
+        $(this).parent().parent().removeClass('highlight');
       });
       $(this).addClass('current').addClass('playing');
       $(this).children("span").removeClass("ui-icon-play").addClass("ui-icon-pause");
       showPauseBtn();
-      
+      $(this).parent().parent("tr").addClass('highlight');
       return(playTrack(trackURL, trackTitle));
     }
   });

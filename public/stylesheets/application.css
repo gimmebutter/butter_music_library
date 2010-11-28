@@ -182,6 +182,10 @@ table#tracks_container.alternating.tablesorter thead th.headerSortDown {
 	background: url("/images/desc.gif") no-repeat 100% 50% #becadc;
 }
 
+table#tracks_container tr.highlight {
+  background: #CDF1FA;
+}
+
 
 #bottom {
   background: url("/images/player-bottom-bg.png");
