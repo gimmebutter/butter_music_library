@@ -114,13 +114,22 @@ class Track < ActiveRecord::Base
   end
   
   # Display track info as min:sec
+  # TODO: CLEAN THIS METHOD UP : [
   def formatted_duration
     l = self.duration.to_f
     mins = l.divmod(60)
     if mins[0] == 0
-      ln = "0:#{mins[1].round}"
+      if mins[1] >= 10.0
+        ln = "0:#{mins[1].round}"
+      else
+        ln = "0:0#{mins[1].round}"
+      end
     else
-      ln = "#{mins[0]}:#{mins[1].round}"
+      if mins[1] >= 10.0
+        ln = "#{mins[0]}:#{mins[1].round}"
+      else
+        ln = "#{mins[0]}:0#{mins[1].round}"
+      end
     end
     if !self.duration.blank?
       if self.duration.include?(":")
