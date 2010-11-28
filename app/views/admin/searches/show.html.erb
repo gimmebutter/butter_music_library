@@ -1,0 +1,31 @@
+<h1>Search</h1>
+
+<h3>Terms</h3>
+
+<% unless @search.genre.blank? %>
+  <p>
+    <b>Genre:</b>
+    <br />
+    <%= @search.genre %>
+  </p>
+<% end %>
+
+<% unless @search.mood.blank? %>
+  <p>
+    <b>Mood:</b>
+    <br />
+    <%= @search.mood %>
+  </p>
+<% end %>
+  
+<% unless @search.composer.blank? %>
+  <p>
+    <b>Composer:</b>
+    <br />
+    <%= @search.composer %>
+  </p>
+<% end %>
+
+<h3>This search returned <%= @search.tracks.count %> results.</h3>
+
+<h3>This search occurred on <%= @search.created_at.strftime("%m/%d/%Y") %> at <%= @search.created_at.strftime("%I:%m %p")%>

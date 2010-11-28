@@ -118,10 +118,16 @@ class Track < ActiveRecord::Base
     l = self.duration.to_f
     mins = l.divmod(60)
     if mins[0] == 0
-      ln = ":#{mins[1].round}"
+      ln = "0:#{mins[1].round}"
     else
       ln = "#{mins[0]}:#{mins[1].round}"
     end
-    ln
+    if !self.duration.blank?
+      if self.duration.include?(":")
+        self.duration
+      else 
+        ln
+      end
+    end
   end
 end

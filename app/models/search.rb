@@ -4,20 +4,41 @@ class Search < ActiveRecord::Base
     @tracks ||= find_tracks
   end
   
+  def particulars
+    "#{self.genre} #{self.mood} #{self.composer}"
+  end
+  
+  private
+  
   def find_tracks
-    Track.find(:all, :conditions => conditions)
+    if keywords.blank?
+      Track.find(:all, :conditions => conditions)
+    else
+      if conditions = [""]
+        tracks = []
+      else
+        tracks = Track.find(:all, :conditions => conditions)
+      end
+      
+      Track.find_by_solr(keywords).results.each do |track|
+        unless tracks.include?(track)
+          tracks << track
+        end
+      end
+      tracks
+    end
   end
   
   def genre_conditions
     ["tracks.genre LIKE ?", "%#{genre}%"] unless genre.blank?
   end
   
-  def composer_conditions
-    ["tracks.composer LIKE ?", "%#{composer}%"] unless composer.blank?
-  end
-  
   def mood_conditions
     ["tracks.album LIKE ?", "%#{mood}%"] unless mood.blank?
+  end
+  
+  def composer_conditions
+    ["tracks.composer LIKE ?", "%#{composer}%"] unless composer.blank?
   end
   
   def conditions

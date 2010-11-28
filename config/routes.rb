@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.root :controller => 'tracks'
     admin.resources :tracks, :collection => { :edit_multiple => :post, :update_multiple => :put, :delete_multiple => :delete }
     admin.resources :users
+    admin.resources :searches
   end
   
   map.resource  :session, :controller => 'sessions', :only => [:new, :create, :destroy]
@@ -11,7 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.sign_out '/sign_out', :controller => 'sessions', :action => 'destroy'
   
   map.resources :tracks
-  map.resources :searches
+  map.resources :searches, :only => [:create, :show]
   
   map.formatted_tracks 'tracks.:format', :controller => 'tracks', :action => 'index'
   

@@ -7,4 +7,9 @@ class SearchesController < ApplicationController
       redirect_to root_path
     end
   end
+  
+  def show
+    @advanced_search = Search.find(params[:id])
+    @tracks = @advanced_search.tracks
+  end
 end

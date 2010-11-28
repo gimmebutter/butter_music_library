@@ -29,6 +29,12 @@
     <%= f.label :album %><br />
     <%= f.text_field :album %>
   </p>
+  <% if @track.duration.blank? %>
+    <p>
+      <%= f.label :duration %><br />
+      <%= f.text_field :duration %>
+    </p>
+  <% end %>
   <p>
     <%= f.label :tag_list, "Tags (separate by commas)" %><br />
     <%= f.text_field :tag_list %>

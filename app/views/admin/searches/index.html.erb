@@ -1,0 +1,7 @@
+<h1>Searches</h1>
+
+<% @searches.each do |search| %>
+  <p>
+    <%= link_to search.particulars, admin_search_path(search) %>
+  </p>
+<% end %>
