@@ -14,6 +14,10 @@
       <%= f.label :composer %>
 
       <%= f.select :composer, Composer.all.collect { |c| [c.name] }, :include_blank => true %>
+      
+      <%= f.label :keywords %>
+
+      <%= f.text_field :keywords %>
     
       <%= f.submit "Submit" %>
     </p>

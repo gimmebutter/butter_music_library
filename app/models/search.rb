@@ -11,7 +11,22 @@ class Search < ActiveRecord::Base
   private
   
   def find_tracks
-    Track.find(:all, :conditions => conditions)
+    if keywords.blank?
+      Track.find(:all, :conditions => conditions)
+    else
+      if conditions = [""]
+        tracks = []
+      else
+        tracks = Track.find(:all, :conditions => conditions)
+      end
+      
+      Track.find_by_solr(keywords).results.each do |track|
+        unless tracks.include?(track)
+          tracks << track
+        end
+      end
+      tracks
+    end
   end
   
   def genre_conditions
