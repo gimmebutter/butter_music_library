@@ -4,13 +4,10 @@
       <%= check_box_tag "track_ids[]", track.id, false, :onchange => "toggleButtons();" %>
     </td>
       <td class="trackPlayBtn" title="<%= track.mp3.url %>">
-        <li style="list-style:none;" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-play"></span></li>
+        <li style="list-style:none;"><img src="/images/icons/play.png" /></li>
       </td>
       <td class="trackTitle admin">
         <%= track.title %>
-      </td>
-      <td class="trackTime admin">
-        <%= track.formatted_duration %>
       </td>
       <td class="trackArtist admin">
         <%= track.artist %>

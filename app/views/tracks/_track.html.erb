@@ -1,26 +1,22 @@
-
 <tr>
   <td class="trackPlayBtn" title="<%= track.mp3.url %>">
-    <li style="list-style:none;" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-play"></span></li>
+    <li style="list-style:none;"><img src="/images/icons/play.png" /></li>
   </td>
   <td class="trackTitle">
     <%= track.title %>
-  </td>
-  <td class="trackTime">
-    <%= track.formatted_duration %>
   </td>
   <td class="trackArtist">
     <%= track.artist %>
   </td>
   <td class="trackAlbum">
-    <%= track.album %>
+    <%= track.album %> test
   </td>
   <td class="trackGenre">
     <%= track.genre %>
   </td>
   <td class="trackDl">
-    <%= link_to "Download", track.mp3.url, :title=>"Download track", :target=>"_blank", :class=>"dl" %> 
+    <%= link_to image_tag("/images/icons/dl.png"), track.mp3.url, :title=>"Download track", :target=>"_blank", :class=>"dl" %> 
   </td>
   <td class="trackAvail">
-    <%= link_to "Check availability", "mailto: ian@gimmebutter.com?Subject=Licensing Inquiry: #{track.title}", :class=>"go" %>
+    <%= link_to image_tag("/images/icons/avail.png"), "mailto: ian@gimmebutter.com?Subject=Licensing Inquiry: #{track.title}", :class=>"go" %>
 </tr>

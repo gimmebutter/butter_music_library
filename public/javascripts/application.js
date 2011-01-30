@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	toggleButtons();
 	selectAll();
-	$("table#tracks_container").tablesorter({ headers: { 0: {sorter: false }, 7: { sorter: false }, 6: { sorter: false } } });
+	$("table#tracks_container").tablesorter({ headers: { 0: {sorter: false }, 5: { sorter: false }, 4: { sorter: false }, 6: { sorter: false } } });
 
 	var jpPlayInfo = $("#play-info");
 	//jplayer
@@ -31,20 +31,16 @@ $(document).ready(function() {
  		this.element.jPlayer("play");
  	});*/
 
- 	$("#pause").hide();
+ 	//$("#pause").hide();
 
  	function showPauseBtn()
  	{
- 		$("#play").fadeOut(function(){
- 			$("#pause").fadeIn();
- 		});
+ 		
  	}
 
  	function showPlayBtn()
  	{
- 		$("#pause").fadeOut(function(){
- 			$("#play").fadeIn();
- 		});
+ 		
  	}
 
  	function playTrack(t,n)

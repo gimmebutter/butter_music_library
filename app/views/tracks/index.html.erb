@@ -1,7 +1,7 @@
 <% content_for :head do %>
 
 <% end %>
-
+<!--
 <p>
   <a href="#" id="advanced_search">Advanced Search</a>
 </p>
@@ -31,41 +31,50 @@
   <% end %>
 </div>
 </div>
-      
+-->      
     
 <div id="jquery_jplayer"></div>
 
 <div id="player_container">
-	<ul id="icons">
-		<li id="play" ><img src="/images/play-btn.png" /></li>
-		<li id="pause"><img src="/images/pause-btn.png" /></li>
-		<li id="volume-min" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-volume-off"></span></li>
-		<li id="volume-slide"><div id="sliderVolume"></div></li>
-		<li id="volume-max" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-volume-on"></span></li>    
-	</ul>
-	<!-- Sliders -->
-	<div id="bars_holder">
-	  <div id="track-display">
-	    <span id="trackname">----</span> <span class="play-info" id="play-info"> </span>
-	  	<div id="sliderPlayback"></div>
-  		<div id="loaderBar"></div>
-	  </div>
-	</div>
-	<% form_tag tracks_path, :method => 'get' do %>
-      <%= text_field_tag :search, @search, :class=>"search", :value=>"Search", :onfocus=>"if
-    (this.value==this.defaultValue) this.value='';" %>
-    <% end %>
+  <div id="player-left">
+    <div id="playpause">
+      <img src="/images/play-btn.png" id="play"/>
+    	<img src="/images/pause-btn.png" id="pause"/>
+    </div>
+    <div id="player-volume">
+      <ul id="icons">
+    		<li id="volume-min"><img src="/images/icons/mute.png" /></li>
+    		<li id="volume-slide"><div id="sliderVolume"></div></li>
+    		<li id="volume-max"><img src="/images/icons/loud.png" /></li>    
+    	</ul>
+    </div>
+  </div>
+  <div id="player-right">
+  	<div id="bars_holder">
+  	  <div id="track-display">
+  	    <div id="trackname">----</div>
+  	    <span class="play-info" id="play-info"> </span>
+  	  	<div id="sliderPlayback"></div>
+    		<div id="loaderBar"></div>
+  	  </div>
+  	</div>
+  </div>
+	<!---->
   <div class="clearfix"></div>
 </div>
+<div id="track-frame">
+  <div id="basic-search">
+  <% form_tag tracks_path, :method => 'get' do %>
+      <%= text_field_tag :search, @search, :class=>"search", :value=>"Search the Library", :onfocus=>"if
+    (this.value==this.defaultValue) this.value='';" %>
+    <% end %>
+  </div>
   <table id="tracks_container" class="content alternating tablesorter" summary="Butter Feed Track Listing">
     <thead>
       <th class="playBtn">
       </th>
       <th class="title">
-        Title
-      </th>
-      <th class="time">
-        Time
+        Song Title
       </th>
       <th class="artist">
         Artist
@@ -76,15 +85,18 @@
       <th class="genre">
         Genre
       </th>
-      <th class="download"> 
+      <th class="download">
+        Download 
       </th>
       <th class="avail">
+        Available?
       </th>
     </thead>
     <tbody id="results">
       <%= render :partial => "track", :collection => @tracks %>
     </tbody>
-    </table>
+  </table>
+</div>
     <div id="bottom">
     </div>
     <p>
