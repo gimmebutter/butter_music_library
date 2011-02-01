@@ -2,7 +2,6 @@ body {
   background-color: #fff100;
   font-family: Helvetica, arial, sans-serif;
   font-size: 14px;
-  padding: 20px;
 }
 
 a img {
@@ -35,13 +34,7 @@ a.dl {
   min-width: 900px;
   margin: 0 auto;
   padding: 20px 40px;
-  margin-top: 20px;
-}
 
-#logo {
-  background: url('/images/logo.png');
-  height: 102px;
-  width: 434px;
 }
 
 #flash_notice, #flash_error {
@@ -99,7 +92,7 @@ a.dl {
 
 .nav {
   color: #5D5D5D;
-  margin-top: 40px;
+
   margin-left: 5px;
 }
 
@@ -457,3 +450,6 @@ html[xmlns] .clearfix {
   display: none;
 }
 
+#wrapper {
+  width: 915px;
+}
