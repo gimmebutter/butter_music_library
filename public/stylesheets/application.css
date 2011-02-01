@@ -204,16 +204,23 @@ tbody#results {
 }
 
 tbody#results td.trackPlayBtn, th.playBtn {
-  min-width: 30px;
   width: 20px;
+}
+
+th.playBtn {
+  min-width: 30px;
 }
 
 tbody#results td.trackTitle, th.title.admin {
   width: 200px;
 }
 
+th.title.admin {
+  
+}
+
 th.title {
-  width: 190px;
+ min-width: 200px;
 }
 
 tbody#results td.trackArtist {
