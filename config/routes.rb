@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.sign_in '/sign_in', :controller => 'sessions', :action => 'new'
   map.sign_out '/sign_out', :controller => 'sessions', :action => 'destroy'
   
-  map.resources :tracks
+  map.resources :tracks, :member => {:download => :get}
   map.resources :searches, :only => [:create, :show]
   
   map.formatted_tracks 'tracks.:format', :controller => 'tracks', :action => 'index'

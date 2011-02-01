@@ -15,7 +15,7 @@
     <%= track.genre %>
   </td>
   <td class="trackDl">
-    <%= link_to image_tag("/images/icons/dl.png"), track.mp3.url, :title=>"Download track", :target=>"_blank", :class=>"dl" %> 
+    <%= link_to image_tag("/images/icons/dl.png"), download_track_path(track), :title=>"Download track", :class=>"dl" %> 
   </td>
   <td class="trackAvail">
     <%= link_to image_tag("/images/icons/avail.png"), "mailto: ian@gimmebutter.com?Subject=Licensing Inquiry: #{track.title}", :class=>"go" %>

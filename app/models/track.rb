@@ -4,6 +4,8 @@ require 'rss/itunes'
 require 'mime/types'
 require 'solr_pagination'
 require 'cgi'
+require 'open-uri'
+require 'net/http'
 
 class Track < ActiveRecord::Base
   acts_as_taggable
