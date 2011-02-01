@@ -227,7 +227,7 @@ tbody#results td.trackArtist {
   width: 230px;
 }
 th.artist {
-  min-width: 115px;
+  min-width: 110px;
 }
 
 th.artist {
@@ -238,8 +238,8 @@ tbody#results td.trackAlbum {
   width: 110px;
 }
 
-thead th.mood {
-  width: 110px;
+th.mood {
+  min-width: 110px;
 }
 
 tbody#results td.trackGenre, th.genre {
