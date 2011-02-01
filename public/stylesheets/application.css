@@ -251,7 +251,7 @@ th.genre.admin {
 }
 
 th.genre {
-  min-width: 95px;
+  min-width: 90px;
 }
 
 tbody#results td.trackDl, th.download {
