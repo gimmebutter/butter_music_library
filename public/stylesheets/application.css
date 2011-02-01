@@ -282,9 +282,9 @@ tbody#results td.trackAvail {
 /*jplayer*/
 
 #player_container {
-  background: url("/images/bg-controls.png") no-repeat;
-  height: 119px;
-  margin: 0 auto;
+  background: url("/images/bg-controls.png") no-repeat 10px 0;
+  height: 90px;
+  margin-left: 127px;
   padding: 28px 60px;
 	position:relative;
   width: 555px;
