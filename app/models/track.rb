@@ -146,7 +146,7 @@ class Track < ActiveRecord::Base
     when "development"
       open("http://s3.amazonaws.com/butter_music_library_development/#{track.mp3.path}").read
     else
-      open("http://s3.amazonaws.com/butter_music_library/#{track.mp3.path}").read
+      open("http://s3.amazonaws.com/butter_music_library/#{CGI.escape(track.mp3.path)}").read
     end
   end
 end
