@@ -8,7 +8,7 @@ class TracksController < ApplicationController
   
   def download
     @track = Track.find(params[:id])
-    data = open("http://s3.amazonaws.com/butter_music_library_development/#{@track.mp3.path}").read
+    data = Track.get_track_for_download(@track)
     send_data data, :filename => "#{@track.title}.mp3", :content_type => "audio/mpeg"
   end
 end

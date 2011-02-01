@@ -5,7 +5,6 @@ require 'mime/types'
 require 'solr_pagination'
 require 'cgi'
 require 'open-uri'
-require 'net/http'
 
 class Track < ActiveRecord::Base
   acts_as_taggable
@@ -139,6 +138,15 @@ class Track < ActiveRecord::Base
       else 
         ln
       end
+    end
+  end
+  
+  def self.get_track_for_download(track)
+    case RAILS_ENV
+    when "development"
+      open("http://s3.amazonaws.com/butter_music_library_development/#{track.mp3.path}").read
+    else
+      open("http://s3.amazonaws.com/butter_music_library/#{track.mp3.path}").read
     end
   end
 end
