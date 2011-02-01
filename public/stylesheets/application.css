@@ -204,6 +204,7 @@ tbody#results {
 }
 
 tbody#results td.trackPlayBtn, th.playBtn {
+  min-width: 30px;
   width: 20px;
 }
 
