@@ -239,7 +239,7 @@ tbody#results td.trackAlbum {
 }
 
 th.mood {
-  min-width: 110px;
+  min-width: 80px;
 }
 
 tbody#results td.trackGenre, th.genre {
