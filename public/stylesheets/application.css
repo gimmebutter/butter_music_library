@@ -250,6 +250,10 @@ th.genre.admin {
   width: 120px;
 }
 
+th.genre {
+  min-width: 95px;
+}
+
 tbody#results td.trackDl, th.download {
   width: 78px;
 }
