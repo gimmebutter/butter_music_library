@@ -220,14 +220,14 @@ th.title.admin {
 }
 
 th.title {
- min-width: 160px;
+ min-width: 155px;
 }
 
 tbody#results td.trackArtist {
   width: 230px;
 }
 th.artist {
-  width: 185px;
+  min-width: 145px;
 }
 
 th.artist {
